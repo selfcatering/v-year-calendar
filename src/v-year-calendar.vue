@@ -30,7 +30,8 @@ export default {
         'roundRangeLimits',
         'renderStyle',
         'weekStart',
-        'year'
+        'year',
+        'months'
     ],
     data: () => ({
         shouldRender: false
@@ -60,7 +61,8 @@ export default {
             style: this.renderStyle,
             weekStart: this.weekStart,
             startYear: this.year,
-            
+            numberMonthsDisplayed: this.months,
+
             // Events
             clickDay: e => this.$emit('click-day', e),
             dayContextMenu: e => this.$emit('day-context-menu', e),
@@ -96,6 +98,7 @@ export default {
                 ${this.renderStyle}
                 ${this.weekStart}
                 ${this.year}
+                ${this.months}
             `;
         }
     },
@@ -122,6 +125,7 @@ export default {
         renderStyle: function(val) { this.calendar.setStyle(val, true); this.shouldRender = true; },
         weekStart: function(val) { this.calendar.setWeekStart(val, true); this.shouldRender = true; },
         year: function(val) { this.calendar.setYear(val); },
+        months: function(val) { this.calendar.setNumberMonthsDisplayed(val); },
         allProps: function(val) {
             if (this.shouldRender) {
                 this.calendar.render();
