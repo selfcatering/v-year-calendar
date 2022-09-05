@@ -3,8 +3,8 @@
 </template>
 
 <script>
-import JsCalendar from 'js-year-calendar';
-import 'js-year-calendar/dist/js-year-calendar.css';
+import JsCalendar from '../../js-year-calendar/dist/js-year-calendar';
+import '../../js-year-calendar/dist/js-year-calendar.css';
 
 export default {
     name: 'Calendar',
