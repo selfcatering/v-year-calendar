@@ -30,6 +30,7 @@ export default {
         'roundRangeLimits',
         'renderStyle',
         'weekStart',
+        'startDate',
         'year',
         'months'
     ],
@@ -60,6 +61,7 @@ export default {
             roundRangeLimits: this.roundRangeLimits,
             style: this.renderStyle,
             weekStart: this.weekStart,
+            startDate: this.startDate,
             startYear: this.year,
             numberMonthsDisplayed: this.months,
 
@@ -97,6 +99,7 @@ export default {
                 ${this.roundRangeLimits}
                 ${this.renderStyle}
                 ${this.weekStart}
+                ${this.startDate}
                 ${this.year}
                 ${this.months}
             `;
@@ -124,6 +127,7 @@ export default {
         roundRangeLimits: function(val) { this.calendar.setRoundRangeLimits(val, true); this.shouldRender = true; },
         renderStyle: function(val) { this.calendar.setStyle(val, true); this.shouldRender = true; },
         weekStart: function(val) { this.calendar.setWeekStart(val, true); this.shouldRender = true; },
+        startDate: function(val) { this.calendar.setStartDate(val); },
         year: function(val) { this.calendar.setYear(val); },
         months: function(val) { this.calendar.setNumberMonthsDisplayed(val); },
         allProps: function(val) {
