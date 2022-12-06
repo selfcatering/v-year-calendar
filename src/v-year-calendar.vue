@@ -72,6 +72,7 @@ export default {
             mouseOutDay: e => this.$emit('mouse-out-day', e),
             renderEnd: e => this.$emit('render-end', e),
             selectRange: e => this.$emit('select-range', e),
+            clearRange: e => this.$emit('clear-range', e),
             yearChanged: e => this.$emit('year-changed', e)
         });
     },
