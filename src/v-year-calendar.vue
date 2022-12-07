@@ -11,6 +11,7 @@ export default {
     props: [
         'allowOverlap',
         'alwaysHalfDay',
+        'forceFullDayClicks',
         'contextMenuItems',
         'customDayRenderer',
         'customDataSourceRenderer',
@@ -42,6 +43,7 @@ export default {
             // Options
             allowOverlap: this.allowOverlap,
             alwaysHalfDay: this.alwaysHalfDay,
+            forceFullDayClicks: this.forceFullDayClicks,
             contextMenuItems: this.contextMenuItems,
             customDayRenderer: this.customDayRenderer,
             customDataSourceRenderer: this.customDataSourceRenderer,
@@ -81,6 +83,7 @@ export default {
             return `
                 ${this.allowOverlap}
                 ${this.alwaysHalfDay}
+                ${this.forceFullDayClicks}
                 ${this.contextMenuItems}
                 ${this.customDayRenderer}
                 ${this.customDataSourceRenderer}
@@ -109,6 +112,7 @@ export default {
     watch: {
         allowOverlap: function(val) { this.calendar.setAllowOverlap(val); },
         alwaysHalfDay: function(val) { this.calendar.setAlwaysHalfDay(val, true); this.shouldRender = true; },
+        forceFullDayClicks: function(val) { this.calendar.setForceFullDayClicks(val, true); this.shouldRender = true; },
         contextMenuItems: function(val) { this.calendar.setContextMenuItems(val, true); this.shouldRender = true; },
         customDayRenderer: function(val) { this.calendar.setCustomDayRenderer(val, true); this.shouldRender = true; },
         customDataSourceRenderer: function(val) { this.calendar.setCustomDataSourceRenderer(val, true); this.shouldRender = true; },
